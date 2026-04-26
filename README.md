@@ -32,7 +32,7 @@ Since 24/7 GPU hosting is resource-intensive, follow these steps to activate the
 
 1. *Activate GPU Backend:*
    - Open the [BioCUDA Backend Notebook](https://colab.research.google.com/drive/1irq4iQQCdyUt9q0rT-itS4XgjwORdb4q?usp=sharing).
-   - Ensure the runtime is set to *GPU* (Runtime > Change runtime type).
+   - Ensure the runtime is set to *T4 GPU* (Runtime > Change runtime type).
    - Run the *Immortal God Cell*.
 
 2. *Establish Tunnel:*
