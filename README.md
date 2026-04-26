@@ -3,7 +3,7 @@
 A high-performance, GPU-accelerated sequence alignment dashboard. This project utilizes OpenAI Triton to parallelize the Smith-Waterman and Needleman-Wunsch algorithms, achieving massive speedups over traditional CPU-based dynamic programming.
 
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel)](https://sw-triton-engine-ui.vercel.app/)
-[![NVIDIA GPU Required](https://img.shields.io/badge/NVIDIA-GPU_Required-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://openai.com/blog/triton/)
+[![Triton Acceleraged](https://img.shields.io/badge/Powered_by-Triton-FF6F00?style=for-the-badge&logo=nvidia&logoColor=white)](https://openai.com/blog/triton/)
 
 ## ⚡ The Compute Paradigm: Wavefront Parallelization
 
