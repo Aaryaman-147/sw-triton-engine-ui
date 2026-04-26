@@ -53,7 +53,7 @@ Since 24/7 GPU hosting is resource-intensive, follow these steps to activate the
 *Sequence 1:* TGTTACGG  
 *Sequence 2:* GGTTGACTA
 
-Local ![Local](assets/local.png) Global ![Global](assets/global.png) |
+Local ![Local](assets/local.png) Global ![Global](assets/global.png)
 
 ## 📜 License
 
