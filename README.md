@@ -5,6 +5,10 @@ A high-performance, GPU-accelerated sequence alignment dashboard. This project u
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel)](https://sw-triton-engine-ui.vercel.app/)
 [![Triton Acceleraged](https://img.shields.io/badge/Powered_by-Triton-FF6F00?style=for-the-badge&logo=nvidia&logoColor=white)](https://openai.com/blog/triton/)
 
+## Dashboard Preview
+
+![BioCUDA Dashboard](assets/dashboard.png)
+
 ## ⚡ The Compute Paradigm: Wavefront Parallelization
 
 Traditional sequence alignment (Smith-Waterman/Needleman-Wunsch) is $O(M \times N)$ on a CPU because each cell depends on its top, left, and top-left neighbors. 
