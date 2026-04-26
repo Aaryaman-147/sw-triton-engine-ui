@@ -11,4 +11,11 @@ Traditional sequence alignment (Smith-Waterman/Needleman-Wunsch) is $O(M \times 
 
 This engine implements *Wavefront Parallelization. By computing cells along the anti-diagonals (waves), we can calculate all independent cells in a wave simultaneously on the GPU. This reduces the time complexity to **$O(M + N - 1)$** parallel execution steps.
 
+## 🛠️ Features
+
+- *Dual-Engine Support:* Toggle between *Local (Smith-Waterman)* for substring matching and *Global (Needleman-Wunsch)* for end-to-end alignment.
+- *Triton Kernel:* Custom-written GPU kernel for high-efficiency memory coalescing and parallel compute.
+- *Hardware Telemetry:* Real-time tracking of GPU execution time (ms) and wavefront efficiency.
+- *Neo-Brutalist UI:* A high-contrast, CRT-inspired dashboard designed for computational biologists.
+
 https://colab.research.google.com/drive/1irq4iQQCdyUt9q0rT-itS4XgjwORdb4q?usp=sharing
