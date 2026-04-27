@@ -81,8 +81,10 @@ Since 24/7 GPU hosting is resource-intensive, follow these steps to activate the
 To test the 3-dimensional Gotoh state machine, try forcing a massive gap with these parameters:
 * **Match:** 2 | **Mismatch:** -1 | **Gap Open:** -10 | **Gap Extend:** -1
 
-*Sequence 1:* TGTTACGG  
-*Sequence 2:* GGTTGACTA
+*Sequence 1:* AATATATACCCCCCCCCCATATATA  
+*Sequence 2:* AATATATATATATA  
+
+*(Because opening a gap costs -10, but extending it costs -1, the engine will group the missing bases into one massive 10-base hyphen block `----------` rather than scattering them).*
 
 Local ![Local](assets/local.png) Global ![Global](assets/global.png)
 
