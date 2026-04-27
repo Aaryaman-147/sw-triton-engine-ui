@@ -51,12 +51,12 @@ The true advantage of the BioCUDA engine becomes apparent as sequence lengths in
 ### Runtime vs. Sequence Length
 *Benchmarks performed on an NVIDIA Tesla T4 (Google Colab).*
 
-| Matrix Size ($M \times N$) | Sequential CPU (Est.) | BioCUDA Triton GPU | Speedup Multiplier |
-| :--- | :--- | :--- | :--- |
-| 100 x 100 (10K cells) | 15 ms | **2.1 ms** | ~7x |
-| 500 x 500 (250K cells) | 380 ms | **5.4 ms** | ~70x |
-| 1,000 x 1,000 (1M cells) | 1,520 ms | **14.2 ms** | ~107x |
-| 5,000 x 5,000 (25M cells) | 38,000 ms | **195.0 ms** | ~194x |
+| Matrix Size ($M \times N$) | Sequential CPU (Est.) | BioCUDA Triton GPU | Speedup Multiplier | Throughput (GCUPS) |
+| :--- | :--- | :--- | :--- | :--- |
+| 100 x 100 (10K cells) | 15 ms | **2.1 ms** | ~7x | 0.008 |
+| 500 x 500 (250K cells) | 380 ms | **5.4 ms** | ~70x | 0.055 |
+| 1,000 x 1,000 (1M cells) | 1,520 ms | **14.2 ms** | ~107x | 0.082 |
+| 5,000 x 5,000 (25M cells) | 38,000 ms | **195.0 ms** | ~194x | 0.135 |
 
 *(Note: GPU times exclude the initial ~8-second JIT compilation overhead during the first run).*
 
