@@ -58,6 +58,7 @@ The true advantage of the BioCUDA engine becomes apparent as sequence lengths in
 | 1,000 x 1,000 (1M cells) | 1,520 ms | **14.2 ms** | ~107x | 0.082 |
 | 5,000 x 5,000 (25M cells) | 38,000 ms | **195.0 ms** | ~194x | 0.135 |
 
+> *Note: Network latency via Localtunnel adds a flat ~50-100ms to web-dashboard readouts. The GCUPS metric is calculated using pure GPU execution time.*
 *(Note: GPU times exclude the initial ~8-second JIT compilation overhead during the first run).*
 
 ### GCUPS Scaling (Throughput)
