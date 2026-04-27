@@ -19,10 +19,11 @@ Standard algorithms use linear gap penalties, which do not reflect biological re
 
 ## 🛠️ Features
 
-- *Dual-Engine Support:* Toggle between *Local (Smith-Waterman)* for substring matching and *Global (Needleman-Wunsch)* for end-to-end alignment.
-- *Triton Kernel:* Custom-written GPU kernel for high-efficiency memory coalescing and parallel compute.
-- *Hardware Telemetry:* Real-time tracking of GPU execution time (ms) and wavefront efficiency.
-- *Neo-Brutalist UI:* A high-contrast, CRT-inspired dashboard designed for computational biologists.
+- **Dual-Engine Support:** Toggle between *Local (Smith-Waterman)* for substring matching and *Global (Needleman-Wunsch)* for end-to-end alignment.
+- **Triton Kernel:** Custom-written GPU kernel for high-efficiency memory coalescing and parallel compute.
+- **Dynamic Matrix Heatmap:** Calculates real-time thermal gradients to visually highlight regions of high genetic similarity beyond the optimal path.
+- **Biological Metrics & Traceback:** Calculates sequence identity and coverage percentages, with a visual mutation highlighter for mismatches.
+- **Hardware Telemetry:** Real-time tracking of GPU execution time (ms) and compute throughput (GCUPS).
 
 ## 🏗️ Architecture
 
