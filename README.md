@@ -86,7 +86,7 @@ To test the 3-dimensional Gotoh state machine, try forcing a massive gap with th
 
 *(Because opening a gap costs -10, but extending it costs -1, the engine will group the missing bases into one massive 10-base hyphen block `----------` rather than scattering them).*
 
-Local ![Local](assets/local.png) Global ![Global](assets/global.png)
+Local ![Local](assets/local_new.png) Global ![Global](assets/global_new.png)
 
 ## 📜 License
 
