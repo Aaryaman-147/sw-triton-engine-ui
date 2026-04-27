@@ -61,7 +61,10 @@ Since 24/7 GPU hosting is resource-intensive, follow these steps to activate the
    - Paste it into the *BioCUDA GPU Server URL* box on the [Live Site](https://sw-triton-engine-ui.vercel.app/).
    - Input your sequences and hit *Execute*.
 
-## 🧪 Example Sequences
+## 🧪 Example Acid Test (Proving Affine Logic)
+
+To test the 3-dimensional Gotoh state machine, try forcing a massive gap with these parameters:
+* **Match:** 2 | **Mismatch:** -1 | **Gap Open:** -10 | **Gap Extend:** -1
 
 *Sequence 1:* TGTTACGG  
 *Sequence 2:* GGTTGACTA
