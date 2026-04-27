@@ -9,12 +9,13 @@ A high-performance, GPU-accelerated sequence alignment dashboard. This project u
 
 ![BioCUDA Dashboard](assets/dashboard.png)
 
-## ⚡ The Compute Paradigm: Wavefront Parallelization
+## ⚡ Core Technologies
 
-Traditional sequence alignment (Smith-Waterman/Needleman-Wunsch) is $O(M \times N)$ on a CPU because each cell depends on its top, left, and top-left neighbors. 
+### 1. Wavefront Parallelization
+Traditional sequence alignment runs at O(M × N) sequentially. This engine implements **Wavefront Parallelization**, computing cells along the anti-diagonals (waves). This allows the GPU to calculate all independent cells simultaneously, reducing time complexity to **O(M + N - 1)** parallel steps.
 
-This engine implements *Wavefront Parallelization. By computing cells along the anti-diagonals (waves), we can calculate all independent cells in a wave simultaneously on the GPU. This reduces the time complexity to **$O(M + N - 1)$** parallel execution steps.
-
+### 2. The Gotoh Algorithm (Affine Gap Penalties)
+Standard algorithms use linear gap penalties, which do not reflect biological reality. This engine implements the **Gotoh Algorithm**, calculating three separate matrices ($H$, $E$, $F$) simultaneously in VRAM to differentiate between the heavy cost of a **Gap Open** and the lighter cost of a **Gap Extend**.
 ## 📊 Performance Benchmarks (Tesla T4 GPU)
 
 Performance is measured in **GCUPS** (Giga Cell Updates Per Second). The Triton Wavefront kernel achieves massive throughput scaling as sequence lengths increase, effectively bypassing the severe bottlenecks of sequential Python `for`-loops.
