@@ -161,12 +161,61 @@ export default function App() {
             <>
               <div className="border-2 border-[#00ff41] p-6 bg-[#00ff41]/5">
                 <h2 className="text-2xl mb-4 uppercase">Peak Score: <span className="font-black text-white">{result.score}</span></h2>
-                <div className="text-3xl tracking-[0.5em] font-black break-words overflow-x-auto whitespace-nowrap pb-4">
-                  <div>{result.seq1_aligned}</div>
-                  <div className="text-white">{result.seq2_aligned}</div>
+                {/* The Visual Mutation Highlighter */}
+                <div className="flex flex-col font-mono text-2xl tracking-[0.3em] font-black overflow-x-auto whitespace-nowrap pb-4 mt-4">
+                  {/* Sequence 1 */}
+                  <div>
+                    {result.seq1_aligned.split('').map((char, i) => {
+                      const isMatch = char === result.seq2_aligned[i] && char !== '-';
+                      const isGap = char === '-';
+                      return (
+                        <span key={`s1-${i}`} className={isMatch ? "text-[#00ff41]" : isGap ? "text-gray-600" : "text-red-500"}>
+                          {char}
+                        </span>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* The Connector Bar */}
+                  <div className="text-sm opacity-50 -my-1">
+                    {result.seq1_aligned.split('').map((char, i) => {
+                      const isMatch = char === result.seq2_aligned[i] && char !== '-';
+                      return <span key={`c-${i}`}>{isMatch ? "|" : "\u00A0"}</span>;
+                    })}
+                  </div>
+
+                  {/* Sequence 2 */}
+                  <div>
+                    {result.seq2_aligned.split('').map((char, i) => {
+                      const isMatch = char === result.seq1_aligned[i] && char !== '-';
+                      const isGap = char === '-';
+                      return (
+                        <span key={`s2-${i}`} className={isMatch ? "text-[#00ff41]" : isGap ? "text-gray-600" : "text-red-500"}>
+                          {char}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-
+{/* Biological Metrics Panel */}
+              <div className="border-2 border-[#00ff41] p-6 bg-black">
+                <h3 className="mb-4 uppercase text-sm font-bold border-b-2 border-[#00ff41] inline-block">Biological Metrics</h3>
+                <div className="grid grid-cols-3 gap-8 text-sm">
+                  <div>
+                    <div className="uppercase opacity-70 mb-1 text-[10px] tracking-widest">Sequence Identity</div>
+                    <div className="text-3xl font-black text-white">{result.identity}<span className="text-sm text-[#00ff41]"> %</span></div>
+                  </div>
+                  <div>
+                    <div className="uppercase opacity-70 mb-1 text-[10px] tracking-widest">Seq 1 Coverage</div>
+                    <div className="text-3xl font-black text-white">{result.coverage1}<span className="text-sm text-[#00ff41]"> %</span></div>
+                  </div>
+                  <div>
+                    <div className="uppercase opacity-70 mb-1 text-[10px] tracking-widest">Seq 2 Coverage</div>
+                    <div className="text-3xl font-black text-white">{result.coverage2}<span className="text-sm text-[#00ff41]"> %</span></div>
+                  </div>
+                </div>
+              </div>
               <div className="border-2 border-[#00ff41] p-6">
                 <h3 className="mb-4 uppercase text-sm font-bold border-b-2 border-[#00ff41] inline-block">Hardware Telemetry</h3>
                 <div className="grid grid-cols-2 gap-8 text-sm">
